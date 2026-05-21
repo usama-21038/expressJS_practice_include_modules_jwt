@@ -1,6 +1,5 @@
-import express, { response, type Application, type Request, type Response } from 'express';
+import express, { type Application} from 'express';
 
-import { pool } from './db';
 import { userRoute } from './modules/user/user.route';
 import { profileRoute } from './modules/profile/profile.route';
 import { authRoute } from './modules/auth/auth.route';

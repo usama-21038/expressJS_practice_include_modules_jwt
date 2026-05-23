@@ -1,13 +1,16 @@
 import { Router } from "express";
 import { userController } from "./user.controller";
+import auth from "../../middleware/auth";
 
 const router= Router();
+
+
 
 // Create a new user using POST method
 router.post('/', userController.createUser);
 
 // Get all users using GET method
-router.get('/', userController.getAllUsers);
+router.get('/',auth(), userController.getAllUsers);
 
 // Get a user by id using GET method
 router.get('/:id',userController.getSingleUser);
